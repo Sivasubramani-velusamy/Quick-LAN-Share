@@ -1,0 +1,56 @@
+online assesment:
+multi measure assesment 150 mins
+	MCQ 50 mins 40 qstn totaly
+		    analytical reasoning
+		    numerical 
+
+	techincal mcq 30 mins
+			error indentify, debugging,
+			logical reasoning
+
+	coding challenge 30 min
+			array string loop recursion , pointer all only on easy level
+			3 qstn
+ 			dsa,algo, oops
+
+
+
+role based coding assesment 90 mins 
+			dsa
+			oops
+			db
+
+
+ ALL ROUNDS ARE ELIMINATION ROUNDS
+go through company website
+good self intro
+ask qstn to panel if they ask you to put 
+ask formal qstn on company and company cultural fit
+
+
+discussion:
+gd
+technical interview
+meet the management and hr
+
+
+Graduate Engineering Trainee
+
+agreement 3 years else penalaty 2lakhs
+stipend 15k for 1st 6 months followed by 4lpa
+
+Premium Grad engi trainee
+
+agreement 3 years else penalaty 2lakhs
+stipend 25k for 1st 6 months followed by 7lpa
+
+
+
+step 1 gd  ( this time complex or enhanced topic) 
+	for communication
+	team work
+	fluency
+	gather more data
+	active learning
+	mainly topic knowledge
+	

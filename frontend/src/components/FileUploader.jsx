@@ -39,6 +39,7 @@ const FileUploader = ({ onFileUpload }) => {
 
     setUploading(true);
     const uploaded = [];
+    let failed = false;
 
     for (const file of selectedFiles) {
       try {
@@ -46,6 +47,7 @@ const FileUploader = ({ onFileUpload }) => {
         uploaded.push(file.name);
       } catch (err) {
         console.error('Upload failed for:', file.name, err);
+        failed = true;
       }
     }
 
@@ -53,6 +55,10 @@ const FileUploader = ({ onFileUpload }) => {
     setSuccessFiles(uploaded);
     setSnackbarOpen(true);
     setSelectedFiles([]);
+
+    if (failed) {
+      alert('Some files failed to upload. Please check the logs and try again.');
+    }
   };
 
   return (
@@ -130,11 +136,13 @@ const FileUploader = ({ onFileUpload }) => {
       >
         <Alert
           onClose={() => setSnackbarOpen(false)}
-          severity="success"
+          severity={successFiles.length > 0 ? 'success' : 'error'}
           variant="filled"
           sx={{ width: '100%' }}
         >
-          {successFiles.length} file(s) uploaded successfully!
+          {successFiles.length > 0
+            ? `${successFiles.length} file(s) uploaded successfully!`
+            : 'File upload failed. Please try again.'}
         </Alert>
       </Snackbar>
     </>

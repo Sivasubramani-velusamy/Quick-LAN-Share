@@ -23,7 +23,7 @@ QuickLAN is a backend service designed to facilitate file transfer over a local 
 - TCP-based file receiving on port 9090.
 - Saves received files to the `received_files` directory.
 - Real-time progress updates broadcasted over WebSocket at `/ws/progress`.
-- Spring Boot application running on port 9091.
+- Spring Boot application running on port 9092.
 
 ## Key Features
 - 🔁 Reliable file transfer over TCP Socket
@@ -36,6 +36,8 @@ QuickLAN is a backend service designed to facilitate file transfer over a local 
 ## Project Structure
 - `BackendApplication.java`: Main Spring Boot application class that starts the TCP receiver thread.
 - `tcp/TCPFileReceiver.java`: Implements the TCP server to receive files.
+- `tcp/TCPFileSender.java`: Implements the TCP client to send files.
+- `controller/SendController.java`: REST API controller to handle file sending requests.
 - `websocket/WebSocketConfig.java`: Configures WebSocket endpoints.
 - `websocket/ProgressController.java`: Handles WebSocket connections and broadcasts progress messages.
 - `received_files/`: Directory where received files are saved.
@@ -46,11 +48,12 @@ QuickLAN is a backend service designed to facilitate file transfer over a local 
    ```bash
    mvn spring-boot:run -f backend/pom.xml
    ```
-3. The backend will start on port 9091, and the TCP receiver will listen on port 9090.
+3. The backend will start on port 9092, and the TCP receiver will listen on port 9090.
 
 ## Notes
 - If the TCP receiver port 9090 is already in use, the receiver will fail to start. Ensure the port is free before running the service.
 - WebSocket endpoint is available at `/ws/progress` for real-time progress updates.
+- Frontend React app should be run separately and configured to connect to backend API and WebSocket endpoints.
 
 ## Dependencies
 - Spring Boot 3.5.0
@@ -59,4 +62,3 @@ QuickLAN is a backend service designed to facilitate file transfer over a local 
 
 ## License
 This project is licensed under the MIT License.
-"# Quick-LAN-Share" 

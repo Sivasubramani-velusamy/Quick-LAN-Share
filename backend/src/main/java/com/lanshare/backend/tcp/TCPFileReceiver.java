@@ -53,14 +53,14 @@ public class TCPFileReceiver implements Runnable {
         try (InputStream inputStream = socket.getInputStream();
              DataInputStream dis = new DataInputStream(inputStream)) {
 
-            // Check if input stream has data to avoid EOFException on empty connections
-            if (dis.available() == 0) {
-                System.out.println("No data received from " + socket.getRemoteSocketAddress() + ", closing connection.");
-                if (socket != null && !socket.isClosed()) {
-                    socket.close();
-                }
-                return;
-            }
+            // Remove the check for dis.available() == 0 to avoid premature connection closure
+            // if (dis.available() == 0) {
+            //     System.out.println("No data received from " + socket.getRemoteSocketAddress() + ", closing connection.");
+            //     if (socket != null && !socket.isClosed()) {
+            //         socket.close();
+            //     }
+            //     return;
+            // }
 
             String fileName = dis.readUTF();
             long fileSize = dis.readLong();

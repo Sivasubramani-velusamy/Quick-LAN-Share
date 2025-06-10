@@ -35,7 +35,16 @@ public class SendController {
         }
 
         TCPFileSender sender = new TCPFileSender(broadcastService);
-        boolean success = sender.sendFile(receiverIp, receiverPort, file);
+        boolean success;
+        try {
+            success = sender.sendFile(receiverIp, receiverPort, file);
+        } catch (Exception e) {
+            System.err.println("❌ Exception in sendFile: " + e.getMessage());
+            e.printStackTrace();
+            response.put("status", "failure");
+            response.put("error", "Exception during file send: " + e.getMessage());
+            return ResponseEntity.status(500).body(response);
+        }
 
         if (success) {
             response.put("status", "success");

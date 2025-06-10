@@ -49,6 +49,7 @@ public class TCPFileSender {
 
         } catch (IOException e) {
             System.err.println("❌ Error sending file: " + e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }
