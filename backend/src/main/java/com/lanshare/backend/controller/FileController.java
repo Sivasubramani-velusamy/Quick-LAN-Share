@@ -65,8 +65,12 @@ public class FileController {
     @PostMapping("/upload")
     public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
         try {
-            if (file.isEmpty()) {
-                return ResponseEntity.badRequest().body("File is empty");
+            if (file == null || file.isEmpty()) {
+                return ResponseEntity.badRequest().body("File is empty or missing");
+            }
+
+            if (!Files.exists(fileStorageLocation)) {
+                Files.createDirectories(fileStorageLocation);
             }
 
             Path targetLocation = fileStorageLocation.resolve(file.getOriginalFilename());

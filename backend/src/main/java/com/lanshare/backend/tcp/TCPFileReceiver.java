@@ -31,6 +31,7 @@ public class TCPFileReceiver implements Runnable {
     public void run() {
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             System.out.println("📥 Receiver listening on port " + PORT);
+            com.lanshare.backend.controller.HealthCheckController.setTcpReceiverRunning(true);
 
             Path saveDirPath = Path.of(SAVE_DIR);
             if (Files.notExists(saveDirPath)) {
@@ -46,21 +47,13 @@ public class TCPFileReceiver implements Runnable {
         } catch (IOException e) {
             System.err.println("❌ Failed to start receiver: " + e.getMessage());
             e.printStackTrace();
+            com.lanshare.backend.controller.HealthCheckController.setTcpReceiverRunning(false);
         }
     }
 
     private void handleClient(@NonNull Socket socket) {
         try (InputStream inputStream = socket.getInputStream();
              DataInputStream dis = new DataInputStream(inputStream)) {
-
-            // Remove the check for dis.available() == 0 to avoid premature connection closure
-            // if (dis.available() == 0) {
-            //     System.out.println("No data received from " + socket.getRemoteSocketAddress() + ", closing connection.");
-            //     if (socket != null && !socket.isClosed()) {
-            //         socket.close();
-            //     }
-            //     return;
-            // }
 
             String fileName = dis.readUTF();
             long fileSize = dis.readLong();

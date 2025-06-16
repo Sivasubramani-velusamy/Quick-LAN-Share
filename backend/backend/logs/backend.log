@@ -1,0 +1,123 @@
+2025-06-16T09:29:10.011+05:30  INFO 20108 --- [main] c.lanshare.backend.BackendApplication    : Starting BackendApplication using Java 17.0.12 with PID 20108 (C:\Users\sivas\My Project\QuickLAN\backend\target\classes started by sivas in C:\Users\sivas\My Project\QuickLAN\backend)
+2025-06-16T09:29:10.027+05:30  INFO 20108 --- [main] c.lanshare.backend.BackendApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-06-16T09:29:12.264+05:30  WARN 20108 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Cannot load configuration class: com.lanshare.backend.config.CorsConfig
+2025-06-16T09:29:12.293+05:30  INFO 20108 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-16T09:29:12.353+05:30 ERROR 20108 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Cannot load configuration class: com.lanshare.backend.config.CorsConfig
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:503) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:311) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:153) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.7.jar:6.2.7]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.5.0.jar:3.5.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.5.0.jar:3.5.0]
+	at com.lanshare.backend.BackendApplication.main(BackendApplication.java:17) ~[classes/:na]
+Caused by: java.lang.ClassNotFoundException: com.lanshare.backend.config.CorsConfig
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:321) ~[spring-core-6.2.7.jar:6.2.7]
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:503) ~[spring-beans-6.2.7.jar:6.2.7]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:499) ~[spring-context-6.2.7.jar:6.2.7]
+	... 12 common frames omitted
+
+2025-06-16T09:29:38.549+05:30  INFO 17940 --- [main] c.lanshare.backend.BackendApplication    : Starting BackendApplication using Java 17.0.12 with PID 17940 (C:\Users\sivas\My Project\QuickLAN\backend\target\classes started by sivas in C:\Users\sivas\My Project\QuickLAN\backend)
+2025-06-16T09:29:38.554+05:30  INFO 17940 --- [main] c.lanshare.backend.BackendApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-06-16T09:29:40.496+05:30  INFO 17940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9092 (http)
+2025-06-16T09:29:40.524+05:30  INFO 17940 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-16T09:29:40.525+05:30  INFO 17940 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-16T09:29:40.616+05:30  INFO 17940 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-16T09:29:40.617+05:30  INFO 17940 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1984 ms
+2025-06-16T09:29:41.455+05:30  INFO 17940 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-16T09:29:41.514+05:30  INFO 17940 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-16T09:29:41.516+05:30  INFO 17940 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@50598a1a]]
+2025-06-16T09:29:41.518+05:30  INFO 17940 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-16T09:29:41.543+05:30  INFO 17940 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9092 (http) with context path '/'
+2025-06-16T09:29:41.564+05:30  INFO 17940 --- [main] c.lanshare.backend.BackendApplication    : Started BackendApplication in 3.761 seconds (process running for 4.378)
+2025-06-16T09:30:41.524+05:30  INFO 17940 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-06-16T09:32:59.760+05:30  INFO 17940 --- [http-nio-9092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-16T09:32:59.761+05:30  INFO 17940 --- [http-nio-9092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-16T09:32:59.766+05:30  INFO 17940 --- [http-nio-9092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-06-16T20:52:31.623+05:30  INFO 18576 --- [main] c.lanshare.backend.BackendApplication    : Starting BackendApplication using Java 17.0.12 with PID 18576 (C:\Users\sivas\My Project\QuickLAN\backend\target\classes started by sivas in C:\Users\sivas\My Project\QuickLAN\backend)
+2025-06-16T20:52:31.629+05:30  INFO 18576 --- [main] c.lanshare.backend.BackendApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-06-16T20:52:33.483+05:30  INFO 18576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9092 (http)
+2025-06-16T20:52:33.502+05:30  INFO 18576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-16T20:52:33.503+05:30  INFO 18576 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-16T20:52:33.581+05:30  INFO 18576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-16T20:52:33.582+05:30  INFO 18576 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1873 ms
+2025-06-16T20:52:34.423+05:30  INFO 18576 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-16T20:52:34.494+05:30  INFO 18576 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-16T20:52:34.496+05:30  INFO 18576 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@437ed416]]
+2025-06-16T20:52:34.497+05:30  INFO 18576 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-16T20:52:34.521+05:30  INFO 18576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9092 (http) with context path '/'
+2025-06-16T20:52:34.544+05:30  INFO 18576 --- [main] c.lanshare.backend.BackendApplication    : Started BackendApplication in 3.686 seconds (process running for 4.092)
+2025-06-16T20:53:34.480+05:30  INFO 18576 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-06-16T20:53:47.939+05:30  INFO 18576 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-16T20:53:48.015+05:30  INFO 18576 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-16T20:53:48.019+05:30  INFO 18576 --- [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-16T20:53:48.020+05:30  INFO 18576 --- [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@437ed416]]
+2025-06-16T20:53:48.020+05:30  INFO 18576 --- [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-16T20:56:36.160+05:30  INFO 11496 --- [main] c.lanshare.backend.BackendApplication    : Starting BackendApplication using Java 17.0.12 with PID 11496 (C:\Users\sivas\My Project\QuickLAN\backend\target\classes started by sivas in C:\Users\sivas\My Project\QuickLAN\backend)
+2025-06-16T20:56:36.160+05:30  INFO 11496 --- [main] c.lanshare.backend.BackendApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-06-16T20:56:38.353+05:30  INFO 11496 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9092 (http)
+2025-06-16T20:56:38.389+05:30  INFO 11496 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-16T20:56:38.389+05:30  INFO 11496 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-16T20:56:38.473+05:30  INFO 11496 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-16T20:56:38.473+05:30  INFO 11496 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2210 ms
+2025-06-16T20:56:39.402+05:30  INFO 11496 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-16T20:56:39.519+05:30  INFO 11496 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-16T20:56:39.528+05:30  INFO 11496 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@22a6d75c]]
+2025-06-16T20:56:39.528+05:30  INFO 11496 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-16T20:56:39.576+05:30  INFO 11496 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9092 (http) with context path '/'
+2025-06-16T20:56:39.623+05:30  INFO 11496 --- [main] c.lanshare.backend.BackendApplication    : Started BackendApplication in 4.453 seconds (process running for 4.901)
+2025-06-16T20:57:39.470+05:30  INFO 11496 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-06-16T21:02:23.007+05:30  INFO 2504 --- [main] c.lanshare.backend.BackendApplication    : Starting BackendApplication using Java 17.0.12 with PID 2504 (C:\Users\sivas\My Project\QuickLAN\backend\target\classes started by sivas in C:\Users\sivas\My Project\QuickLAN\backend)
+2025-06-16T21:02:23.007+05:30  INFO 2504 --- [main] c.lanshare.backend.BackendApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-06-16T21:02:24.642+05:30  INFO 2504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9092 (http)
+2025-06-16T21:02:24.652+05:30  INFO 2504 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-16T21:02:24.652+05:30  INFO 2504 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-16T21:02:24.726+05:30  INFO 2504 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-16T21:02:24.726+05:30  INFO 2504 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1645 ms
+2025-06-16T21:02:25.587+05:30  INFO 2504 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-16T21:02:25.643+05:30  INFO 2504 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-16T21:02:25.643+05:30  INFO 2504 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@34a20f16]]
+2025-06-16T21:02:25.643+05:30  INFO 2504 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-16T21:02:25.670+05:30  INFO 2504 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9092 (http) with context path '/'
+2025-06-16T21:02:25.694+05:30  INFO 2504 --- [main] c.lanshare.backend.BackendApplication    : Started BackendApplication in 3.586 seconds (process running for 3.985)
+2025-06-16T21:03:25.643+05:30  INFO 2504 --- [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+2025-06-16T21:03:25.814+05:30  INFO 2504 --- [http-nio-9092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-16T21:03:25.814+05:30  INFO 2504 --- [http-nio-9092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-16T21:03:25.821+05:30  INFO 2504 --- [http-nio-9092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-16T21:20:39.839+05:30  INFO 2504 --- [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-16T21:20:39.914+05:30  INFO 2504 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-16T21:20:39.914+05:30  INFO 2504 --- [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopping...
+2025-06-16T21:20:39.914+05:30  INFO 2504 --- [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@34a20f16]]
+2025-06-16T21:20:39.914+05:30  INFO 2504 --- [SpringApplicationShutdownHook] o.s.m.s.b.SimpleBrokerMessageHandler     : Stopped.
+2025-06-16T21:46:13.443+05:30  INFO 5920 --- [main] c.lanshare.backend.BackendApplication    : Starting BackendApplication using Java 17.0.12 with PID 5920 (C:\Users\sivas\My Project\QuickLAN\backend\target\classes started by sivas in C:\Users\sivas\My Project\QuickLAN\backend)
+2025-06-16T21:46:13.449+05:30  INFO 5920 --- [main] c.lanshare.backend.BackendApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-06-16T21:46:15.304+05:30  INFO 5920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9092 (http)
+2025-06-16T21:46:15.323+05:30  INFO 5920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-16T21:46:15.323+05:30  INFO 5920 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-16T21:46:15.400+05:30  INFO 5920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-16T21:46:15.400+05:30  INFO 5920 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1883 ms
+2025-06-16T21:46:16.323+05:30  INFO 5920 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-06-16T21:46:16.404+05:30  INFO 5920 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2025-06-16T21:46:16.409+05:30  INFO 5920 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@7d30007d]]
+2025-06-16T21:46:16.409+05:30  INFO 5920 --- [main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2025-06-16T21:46:16.454+05:30  INFO 5920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9092 (http) with context path '/'
+2025-06-16T21:46:16.477+05:30  INFO 5920 --- [main] c.lanshare.backend.BackendApplication    : Started BackendApplication in 3.837 seconds (process running for 4.359)
+2025-06-16T21:46:16.549+05:30  INFO 5920 --- [http-nio-9092-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-16T21:46:16.549+05:30  INFO 5920 --- [http-nio-9092-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-16T21:46:16.552+05:30  INFO 5920 --- [http-nio-9092-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-16T21:47:16.386+05:30  INFO 5920 --- [MessageBroker-10] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 174 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(168)-CONNECTED(168)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 24, active threads = 0, queued tasks = 0, completed tasks = 1050], outboundChannel[pool size = 24, active threads = 0, queued tasks = 0, completed tasks = 342], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 1, completed tasks = 25]
+2025-06-16T22:17:16.390+05:30  INFO 5920 --- [MessageBroker-4] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 177 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(171)-CONNECTED(171)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 1077], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 348], sockJsScheduler[pool size = 12, active threads = 1, queued tasks = 2, completed tasks = 457]

@@ -3,73 +3,72 @@ import {
   Box,
   Typography,
   Paper,
-  TextField,
-  Button,
   List,
   ListItem,
   ListItemText,
 } from '@mui/material';
+import ConnectionForm from '../components/ConnectionForm';
+import FileUploader from '../components/FileUploader';
+import useWebSocket from '../hooks/useWebSocket';
 
-const HomePage = ({ onConnect }) => {
-  const [ip, setIp] = useState('');
-  const [port, setPort] = useState(9090);
-  const [recentDevices, setRecentDevices] = useState([]);
+const HomePage = () => {
+  const [connected, setConnected] = useState(false);
+  const [receiverIp, setReceiverIp] = useState('');
+  const [receiverPort, setReceiverPort] = useState(9090);
+  const { connected: wsConnected, messages, sendMessage, error } = useWebSocket();
 
-  useEffect(() => {
-    const storedDevices = localStorage.getItem('recentDevices');
-    if (storedDevices) {
-      setRecentDevices(JSON.parse(storedDevices));
-    }
-  }, []);
+  const handleConnect = (ip, port) => {
+    setReceiverIp(ip);
+    setReceiverPort(port);
+    setConnected(true);
+  };
 
-  const handleConnect = () => {
-    if (ip && port) {
-      onConnect(ip, port);
-      const updatedDevices = [ { ip, port }, ...recentDevices.filter(d => d.ip !== ip || d.port !== port) ];
-      setRecentDevices(updatedDevices);
-      localStorage.setItem('recentDevices', JSON.stringify(updatedDevices));
+  const handleFileUpload = async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const response = await fetch('http://localhost:9092/api/files/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('File upload failed');
+      }
+
+      // Optionally send a WebSocket message to notify progress
+      sendMessage(`File uploaded: ${file.name}`);
+    } catch (err) {
+      alert('File upload error: ' + err.message);
     }
   };
 
   return (
-    <Paper sx={{ p: 3, maxWidth: 400, margin: 'auto', mt: 6 }}>
-      <Typography variant="h5" gutterBottom>
-        Connect to Receiver
-      </Typography>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <TextField
-          label="Receiver IP"
-          value={ip}
-          onChange={(e) => setIp(e.target.value)}
-          fullWidth
-        />
-        <TextField
-          label="Receiver Port"
-          type="number"
-          value={port}
-          onChange={(e) => setPort(Number(e.target.value))}
-          fullWidth
-        />
-        <Button variant="contained" onClick={handleConnect} disabled={!ip || !port}>
-          Connect
-        </Button>
-      </Box>
-
-      {recentDevices.length > 0 && (
-        <>
-          <Typography variant="subtitle1" sx={{ mt: 3 }}>
-            Recent Devices
+    <Box sx={{ maxWidth: 800, margin: 'auto', mt: 4 }}>
+      <ConnectionForm onConnect={handleConnect} />
+      {connected && (
+        <Paper sx={{ p: 2, mt: 4 }}>
+          <Typography variant="h6">Connected to {receiverIp}:{receiverPort}</Typography>
+          <FileUploader onFileUpload={handleFileUpload} />
+          <Typography variant="subtitle1" sx={{ mt: 2 }}>
+            WebSocket Connection: {wsConnected ? 'Connected' : 'Disconnected'}
           </Typography>
-          <List>
-            {recentDevices.map(({ ip, port }, index) => (
-              <ListItem button key={index} onClick={() => onConnect(ip, port)}>
-                <ListItemText primary={`${ip}:${port}`} />
+          {error && (
+            <Typography color="error" variant="body2" sx={{ mt: 1 }}>
+              WebSocket Error: {error}
+            </Typography>
+          )}
+          <List dense sx={{ maxHeight: 200, overflowY: 'auto' }}>
+            {messages.map((msg, idx) => (
+              <ListItem key={idx}>
+                <ListItemText primary={msg} />
               </ListItem>
             ))}
           </List>
-        </>
+        </Paper>
       )}
-    </Paper>
+    </Box>
   );
 };
 
