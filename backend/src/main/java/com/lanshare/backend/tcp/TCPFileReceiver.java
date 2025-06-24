@@ -33,7 +33,8 @@ public class TCPFileReceiver implements Runnable {
             System.out.println("📥 Receiver listening on port " + PORT);
             com.lanshare.backend.controller.HealthCheckController.setTcpReceiverRunning(true);
 
-            Path saveDirPath = Path.of(SAVE_DIR);
+            // Use the new fixed path for saving files
+            Path saveDirPath = Path.of("C:\\Users\\sivas\\Downloads\\Project-Folder-Local-Storage");
             if (Files.notExists(saveDirPath)) {
                 Files.createDirectories(saveDirPath);
             }
@@ -58,7 +59,7 @@ public class TCPFileReceiver implements Runnable {
             String fileName = dis.readUTF();
             long fileSize = dis.readLong();
 
-            File outFile = new File(SAVE_DIR, fileName);
+            File outFile = new File("C:\\Users\\sivas\\Downloads\\Project-Folder-Local-Storage", fileName);
             try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(outFile))) {
 
                 byte[] buffer = new byte[4096];

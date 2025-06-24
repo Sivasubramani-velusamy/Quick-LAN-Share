@@ -36,7 +36,7 @@ QuickLAN is a local network file sharing application that allows users to transf
 - Select a device IP from the dropdown or enter it manually.
 - Upload files to transfer them to the selected receiver device.
 - File transfer progress is displayed in the UI.
-- Received files are stored in the `backend/received_files/` directory on the receiver device.
+- Received files are stored in the local directory: `C:\Users\sivas\Downloads\Project-Folder-Local-Storage` on the receiver device.
 
 ## Network Requirements
 
